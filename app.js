@@ -67,7 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ]
 
+  cardArray.sort(() => 0.5 - Math.random())
+
   const grid = document.querySelector('.grid')
+  const resultDisplay = document.querySelector('#result')
   let cardsChosen = []
   let cardsChosenId = []
   let cardsWon = []
@@ -100,6 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     cardsChosen = []
     cardsChosenId = []
+    resultDisplay.textContent = cardsWon.length
+    if(cardsWon.length === cardArray.length/2) {
+      resultDisplay.textContent = 'Congrats! You got em all!'
+    }
   }
 
   // flip your card
