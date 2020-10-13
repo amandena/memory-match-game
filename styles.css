@@ -1,5 +1,9 @@
 body {
   background: rgb(219, 89, 219);
+  text-align: center;
+  display: block;
+  align-items: center;
+  justify-content: center;
 }
 
 img {
