@@ -92,20 +92,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const optionOneId = cardsChosenId[0]
     const optionTwoId = cardsChosenId[1]
     if(cardsChosen[0] === cardsChosen[1]) {
-      alert('You found a match!')
       cards[optionOneId].setAttribute('src', '/assets/artemis.png')
       cards[optionTwoId].setAttribute('src', '/assets/artemis.png')
       cardsWon.push(cardsChosen)
     } else {
       cards[optionOneId].setAttribute('src', '/assets/luna.png')
       cards[optionTwoId].setAttribute('src', '/assets/luna.png')
-      alert('No match. Please try again.')
     }
     cardsChosen = []
     cardsChosenId = []
     resultDisplay.textContent = cardsWon.length
     if(cardsWon.length === cardArray.length/2) {
       resultDisplay.textContent = 'Congrats! You got em all!'
+      setTimeout(() => location.reload(), 4000)
     }
   }
 
@@ -116,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cardsChosenId.push(cardId)
     this.setAttribute('src', cardArray[cardId].img)
     if(cardsChosen.length === 2) {
-      setTimeout(checkForMatch, 500)
+      setTimeout(checkForMatch, 1000)
     }
   }
 
